@@ -10,8 +10,14 @@ router.get('/', function(req, response, next) {
         Info.find((err,data)=>{
             if(err)console.log(err);
             else {
+
                 var resultArray = data.pop();
-                response.render('index', {number1:  resultArray.firstPrinter, number2: resultArray.secondPrinter, sum: resultArray.total});
+                var passed = new Date(resultArray.date);
+                var dateInString = passed.toLocaleTimeString() + " " + passed.toLocaleDateString();
+                response.render('index', {number1:  resultArray.firstPrinter,
+                                          number2: resultArray.secondPrinter,
+                                          sum: resultArray.total,
+                                          dateInString: dateInString});
             }
         })
 });
