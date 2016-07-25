@@ -10,26 +10,21 @@ router.get('/', function(req, response, next) {
         Info.find((err,data)=>{
             if(err)console.log(err);
             else {
-                var showArray = {};
-                //var resultArray = data.pop();
-                showArray.mi = data.splice(-5).reverse();
+                var letsSort = data;
+                var newArray = [];
 
-                console.log(showArray);
+                for(var i = 0; i < letsSort.length; i++){
+                    var newDate = letsSort[i].date;
+                    var passed = new Date(newDate);
+                    var dateInString = passed.toLocaleTimeString() + " " + passed.toLocaleDateString();
+                    newArray[i] = {
+                        date: dateInString,
+                        luminosity: letsSort[i].luminosity
+                    }
+                }
+                showArray.mi = newArray.splice(-48).reverse();
                 response.render('index', showArray);
-
-
-
-
-                //var passed = new Date(resultArray.date);
-                //var dateInString = passed.toLocaleTimeString() + " " + passed.toLocaleDateString();
-                // response.render('index', {number1:  resultArray.firstPrinter,
-                //                           number2: resultArray.secondPrinter,
-                //                           sum: resultArray.total,
-                //                           dateInString: dateInString});
-
-
             }
         })
 });
-
 module.exports = router;
