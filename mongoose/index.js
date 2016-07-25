@@ -7,7 +7,8 @@ var totalInfo = new Schema({
     total: Number,
     date: {
         type: Date, default: Date.now
-    }
+    },
+    luminosity: Number
 })
 
 module.exports = mongoose.model('Info', totalInfo);
