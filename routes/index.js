@@ -19,8 +19,8 @@ router.get('/', function(req, response, next) {
                     var passed = new Date(newDate);
                     passed.setTime(passed.getTime() + (3*60*60*1000));
                     var localeDate = passed.toLocaleDateString(); // 2016-07-26
-                    var year = localeDate.substr(0,4);
-                    var month = localeDate.substr(5,2);
+                    var year = passed.getFullYear();
+                    var month = passed.getMonth();
                     var day = localeDate.substr(8,2);
 
 
@@ -41,5 +41,5 @@ module.exports = router;
 
 function russianMonth(d){
     var months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-    return months[parseInt(d)-1];
+    return months[parseInt(d)];
 }
