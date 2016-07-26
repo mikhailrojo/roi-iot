@@ -17,8 +17,8 @@ router.get('/', function(req, response, next) {
                 for(var i = 0; i < letsSort.length; i++){
                     var newDate = letsSort[i].date;
                     var passed = new Date(newDate);
-                    passed.setTime(passed.getTime() + (3*60*60*1000));
-                    var localeDate = passed.toLocaleDateString(); // 2016-07-26
+                    passed.setTime(passed.getTime() + (2*60*60*1000));
+                    var localeDate = passed.toDateString(); // 2016-07-26
                     var year = passed.getFullYear();
                     var month = passed.getMonth();
                     var day = passed.getDate();
