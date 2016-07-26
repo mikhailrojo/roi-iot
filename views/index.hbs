@@ -15,13 +15,12 @@
   <div class="list card">
       <div class="item item-divider">
           <h4>Уровень освещенности в 6А81:</h4>
-          <h4>Измеряется от 0(абсолютный свет) до 1000 лм(темнота)</h4>
       </div>
       {{#each mi}}
       <a href="#" class="item item-icon-left">
           <i class="icon ion-android-sunny"></i>
-              <p>Уровень света, лм: {{luminosity}}</p>
-            <p>На дату: {{date}} </p>
+              <p>Освещенность: {{luminosity}} %</p>
+            <p>Время: {{time}}, {{date}} </p>
       </a>
       {{/each}}
   </div>
@@ -29,6 +28,3 @@
 <br />
 <br />
 </div>
-
-
-  
