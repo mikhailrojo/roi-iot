@@ -21,7 +21,7 @@ router.get('/', function(req, response, next) {
                     var localeDate = passed.toLocaleDateString(); // 2016-07-26
                     var year = passed.getFullYear();
                     var month = passed.getMonth();
-                    var day = localeDate.substr(8,2);
+                    var day = passed.getDate();
 
 
 
