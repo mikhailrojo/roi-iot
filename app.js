@@ -4,17 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var Info = require('./mongoose/index');
-var mongoURI = 'mongodb://iot:iot@ds023495.mlab.com:23495/iot'
 
-mongoose.connect(mongoURI, (err,data)=>{
-    if(err) console.log(err);
-    else console.log('Есть подлючение к базе');
-});
-
-// var test = new Info({firstPrinter: 1, secondPrinter: 2, total: 3});
-// test.save((err)=>console.log(err));
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
